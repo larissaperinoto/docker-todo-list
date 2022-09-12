@@ -1,7 +1,8 @@
-FROM node:14-alpine
-WORKDIR /todo-app
+FROM node:14
+WORKDIR /user/todo-app/back-end
 COPY packge*.json ./
 RUN npm install
-ADD . .
+ADD node_modules.tar.gz ./
+COPY . .
 EXPOSE 3001
 CMD npm start
